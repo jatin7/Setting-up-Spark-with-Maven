@@ -5,15 +5,9 @@ After cloning the repository you have cd to main my-app directory to execute mav
 Execution below:
 "mvn compile assembly:single"
 
-After that in target directory new jar file will pop up.
-This jar file contains compiled and builded source code with all dependencies.
-
-Now you just have to execute the program with below instruction:
-java -cp target\my-app-1.0-jar-with-dependencies.jar Main
-
-Server starts and we can make request thorugh opening chrome browser
-and pasting --> "localhost:4567/hello"
-to address bar
-
 ## download files from
 http://www.wikibench.eu/wiki/2007-09/
+
+
+#Exact command
+SPARK_LOCAL_IP=localhost java -cp target/my-app-1.0-jar-with-dependencies.jar TransformRDD <file-name>
