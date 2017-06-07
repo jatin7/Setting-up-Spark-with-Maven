@@ -1,4 +1,4 @@
-import org.apache.spark.SparkContext;
+import org.apache.spark.*;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
@@ -9,10 +9,17 @@ import org.apache.spark.api.java.function.Function;
  */
 public class TransformRDD {
     public static void main(String[] args) {
-        JavaSparkContext sc = new JavaSparkContext();
-        JavaRDD<String> inputRDD = sc.textFile("log.txt");
-        Function<String, Boolean> error = x -> x.contains("error");
+	SparkConf conf = new SparkConf().setAppName("Transformrdd").setMaster("local");
+        JavaSparkContext sc = new JavaSparkContext(conf);
+        JavaRDD<String> inputRDD = sc.textFile(args[0]);
+        Function<String, Boolean> error = x -> x.contains("jpg");
         JavaRDD<String> errorsRDD = inputRDD.filter(error);
-        System.out.println("number of errors: " + errorsRDD.count());
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("number of lines with 'jpg': " + errorsRDD.count());
+        System.out.println();
+        System.out.println();
+        System.out.println();
     }
 }
