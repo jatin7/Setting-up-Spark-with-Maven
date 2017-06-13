@@ -9,7 +9,7 @@ import org.apache.spark.api.java.function.Function;
  */
 public class TransformRDD {
     public static void main(String[] args) {
-	SparkConf conf = new SparkConf().setAppName("Transformrdd").setMaster("local");
+	    SparkConf conf = new SparkConf().setAppName("Transformrdd").setMaster("local");
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> inputRDD = sc.textFile(args[0]);
         Function<String, Boolean> error = x -> x.contains("jpg");

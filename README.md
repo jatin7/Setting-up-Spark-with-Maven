@@ -5,9 +5,9 @@ After cloning the repository you have cd to main my-app directory to execute mav
 Execution below:
 "mvn compile assembly:single"
 
-## download files from
+## Download Files From
 http://www.wikibench.eu/wiki/2007-09/
 
-
-#Exact command
-SPARK_LOCAL_IP=localhost java -cp target/my-app-1.0-jar-with-dependencies.jar TransformRDD <file-name>
+## Exact command
+**SPARK_LOCAL_IP=localhost** java -cp target/my-app-1.0-jar-with-dependencies.jar TransformRDD <file-name>
+**SPARK_LOCAL_IP=localhost** java -cp target/my-app-1.0-jar-with-dependencies.jar Flights <file-name> <city-name>
